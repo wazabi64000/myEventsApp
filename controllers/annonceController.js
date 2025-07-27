@@ -12,7 +12,7 @@ export const getAnnonces = async (req, res) => {
 export const createAnnonce = async (req, res) => {
   const { title, description, category, price } = req.body;
   const imageUrl = req.file ? req.file.path : null;
-  const user = req.user._id;
+const user = req.body.userId;  // ou req.body.user
 
   try {
     const annonce = new Annonce({
