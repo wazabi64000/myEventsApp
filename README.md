@@ -21,7 +21,7 @@
 | POST    | /annonces              | Création annonce (avec image)     | Oui (JWT)   |
 
 ---
-# 📘 Guide des Endpoints API – Pour Développeur Frontend
+#  Guide des Endpoints API – Pour Développeur Frontend
 
 ---
 
