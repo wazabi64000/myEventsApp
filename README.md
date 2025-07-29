@@ -6,7 +6,10 @@
 
 ## 1. Base URL API
 
+```url
+https://myeventsapp.onrender.com
 
+```
 ---
 
 ## 2. Endpoints disponibles
@@ -16,7 +19,7 @@
 | POST    | /auth/register         | Inscription utilisateur            | Non         |
 | POST    | /auth/login            | Connexion utilisateur              | Non         |
 | GET     | /categories            | Liste toutes les catégories        | Non         |
-| POST    | /categories            | Création catégorie                 | Non         |
+| POST    | /categories            | Création catégorie                 | Oui (JWT)       |
 | GET     | /annonces              | Liste toutes les annonces          | Non         |
 | POST    | /annonces              | Création annonce (avec image)     | Oui (JWT)   |
 
@@ -102,9 +105,4 @@
 
 ---
 
-##  Base URL à utiliser
-
-```url
-https://myeventsapp.onrender.com
-
-```
+ 

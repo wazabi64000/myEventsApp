@@ -3,8 +3,7 @@ import FormData from 'form-data';
 import fs from 'fs';
 import path from 'path';
 
-const BASE_URL = 'http://localhost:5000/api';
-
+const BASE_URL =   'https://myeventsapp.onrender.com/api';
 const users = [
   { username: 'movdnuser', email: 'monuvdser@example.com', password: 'password123' }
   // tu peux en ajouter d’autres ici si tu veux
