@@ -10,11 +10,20 @@ export const getAnnonces = async (req, res) => {
 };
 
 export const createAnnonce = async (req, res) => {
-  const { title, description, category, price } = req.body;
+  console.log('req.body:', req.body);
+  console.log('req.file:', req.file);
+  console.log('req.user:', req.user);
+
+  const { title, description, category } = req.body;
+  const price = Number(req.body.price);
   const imageUrl = req.file ? req.file.path : null;
-const user = req.body.userId;  // ou req.body.user
+  const user = req.user._id; // Récupérer l'ID depuis req.user
 
   try {
+    if (isNaN(price) || price <= 0) {
+      return res.status(400).json({ message: "Prix invalide" });
+    }
+
     const annonce = new Annonce({
       title,
       description,
@@ -28,6 +37,7 @@ const user = req.body.userId;  // ou req.body.user
 
     res.status(201).json(annonce);
   } catch (error) {
+    console.error("Erreur création annonce:", error);
     res.status(500).json({ message: error.message });
   }
 };

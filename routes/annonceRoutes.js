@@ -6,6 +6,6 @@ import upload from '../middlewares/uploadMiddleware.js';
 const router = express.Router();
 
 router.get('/', getAnnonces);
-router.post('/',  upload.single('image'), createAnnonce);
+router.post('/', protect,  upload.single('image'), createAnnonce);
 
 export default router;
