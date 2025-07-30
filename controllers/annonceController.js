@@ -16,7 +16,8 @@ export const createAnnonce = async (req, res) => {
 
   const { title, description, category } = req.body;
   const price = Number(req.body.price);
-  const imageUrl = req.file ? req.file.path : null;
+const imageUrl = req.file ? `/uploads/${req.file.filename}` : null;
+
   const user = req.user._id; // Récupérer l'ID depuis req.user
 
   try {
