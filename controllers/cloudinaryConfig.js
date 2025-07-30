@@ -1,5 +1,6 @@
-import { v2 as cloudinary } from 'cloudinary';
 import { CloudinaryStorage } from 'multer-storage-cloudinary';
+import { v2 as cloudinary } from 'cloudinary';
+import multer from 'multer';
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -13,9 +14,10 @@ const storage = new CloudinaryStorage({
   cloudinary,
   params: {
     folder: 'annonces',
-    allowed_formats: ['jpg', 'png', 'webp'],
+    allowed_formats: ['jpg', 'jpeg', 'png', 'webp'],
   },
 });
 
 const upload = multer({ storage });
+
 export default upload;

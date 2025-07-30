@@ -16,7 +16,7 @@ export const createAnnonce = async (req, res) => {
 
   const { title, description, category } = req.body;
   const price = Number(req.body.price);
-const imageUrl = req.file ? req.file.path : null;
+    const image = req.file?.path || '';
 
 
   const user = req.user._id; // Récupérer l'ID depuis req.user
@@ -32,7 +32,7 @@ const imageUrl = req.file ? req.file.path : null;
       category,
       price,
       user,
-      imageUrl
+      image
     });
 
     await annonce.save();
